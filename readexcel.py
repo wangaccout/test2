@@ -1,5 +1,6 @@
 import xlrd
 
+
 # 例1 通过Book.sheets()等方法获得sheet对象
 excel_path = 'D:\PyCharm\PyCharm Community Edition 2020.2\project\\test\\demo.xls'
 # 打开文件，获取Excel文件的workbook对象
