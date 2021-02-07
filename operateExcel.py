@@ -9,7 +9,7 @@ from openpyxl.drawing.image import Image
 
 
 # Workbook对象属性（工作簿操作）
-# wb = load_workbook('test.xlsx')  # 已存在的表，创建对象
+wb = load_workbook('test.xlsx')  # 已存在的表，创建对象
 # print(wb.sheetnames)  # 获取工作簿中的表(列表)
 # print(wb.get_sheet_names())
 # print(wb.active)  # 获取当前活跃的sheet
@@ -19,7 +19,7 @@ from openpyxl.drawing.image import Image
 # print(wb.properties)  # 获取文档的元数据，如标题、创建者、创建日期等
 
 # Workbook,cell对象（工作表操作，单元格）
-# sheet = wb['Sheet1']  # 创建sheet对象
+sheet = wb['Sheet1']  # 创建sheet对象
 # print(sheet.title)
 # print(sheet.max_row, sheet.max_column)
 # print(sheet.min_row, sheet.min_column)
@@ -33,10 +33,10 @@ from openpyxl.drawing.image import Image
 # print(cell.row, cell.column, cell.value, cell.coordinate)
 
 # 访问单元格所有信息
-# for row in sheet.rows:
-#     for cell in row:  # 循环遍历每一个单元格
-#         print(cell.value, end=',')
-#     print()
+for row in sheet.rows:
+    for cell in row:  # 循环遍历每一个单元格
+        print(cell.value, end=',')
+    print()
 #
 # for row in sheet.values:
 #     print(*row)
@@ -65,13 +65,26 @@ print(wb1.sheetnames)
 # ws1 = wb1.active
 # ws1 = wb1['test']
 # ws1['B5'] = 'hrhh'
-ws.append(['TIME', 'TITLE', 'A-Z'])
+ws.append(['TIME', 'TITLE', 'A-Z'])  # 第一行插入数据
 for i in range(50):
     TIME = datetime.datetime.now().strftime('%H:%M:%S')
     TITLE = str(time())
     A_Z = get_column_letter(choice(range(1, 26)))
     ws.append([TIME, TITLE, A_Z])
-img = Image('111.jpg')
-img.width, img.height = 140,90
-ws.add_image(img, 'E2')  # 插入图片
+
+# img = Image('111.jpg')
+# img.width, img.height = 140, 90
+# ws.add_image(img, 'E2')  # 插入图片
 wb1.save('test1.xlsx')
+
+# 获取最大行
+# row_max = ws.max_row
+# # 获取最大列
+# con_max = ws.max_column
+wb2 = load_workbook('test1.xlsx')
+ws2 = wb2['test']
+for row in ws2.rows:
+    for cell in row:  # 循环遍历每一个单元格
+        print(cell.value, end=',')
+    print()
+
