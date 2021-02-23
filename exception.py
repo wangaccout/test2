@@ -7,17 +7,17 @@ import sys
 #     except ValueError:
 #         print('您输入的不是数字，请再次尝试输入')
 
-# try:
-#     f = open('test.txt')
-#     s = f.readline()
-#     i = int(s.strip())
-# except OSError as err:
-#     print('OS error:{0}'.format(err))
-# except ValueError:
-#     print('Could not convert data to an interger')
-# except:
-#     print('Unexpected error:', sys.exc_info()[0])
-#     raise
+try:
+    f = open('test.txt')
+    s = f.readline()
+    i = int(s.strip())
+except OSError as err:
+    print('OS error:{0}'.format(err))
+except ValueError:
+    print('Could not convert data to an interger')
+except:
+    print('Unexpected error:', sys.exc_info()[0])
+    raise
 
 # for arg in sys.argv[1:]:
 #     try:
@@ -29,8 +29,8 @@ import sys
 #         print('haha')
 #         f.close()
 
-def this_fails():
-    x = 1/5
+# def this_fails():
+#     x = 1/5
 #
 # try:
 #     this_fails()
@@ -80,3 +80,22 @@ try:
 except MyError as e:
     print('My exception occurred, value:', e.value)
 
+# a = [1, 2, 3]
+#
+# try:
+#     a[3]
+# except Exception as e:
+#     print('错误类型是', e.__class__.__name__)
+#     print('错误明细是', e)
+
+try:
+    data = {"a": "b"}
+    data["4"]    # data字典中没有'c'这个key值
+except (IndexError, KeyError) as e:
+    print(e)
+except Exception as e:
+    print(e)
+else:
+    print("没有异常")
+finally:
+    print("不管有没有错，都执行finnally")
