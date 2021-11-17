@@ -6,7 +6,7 @@
 # print(sum1)
 # print(sum2)
 # print('数字{0}和{1}相加结果为：{2}'.format(num1, num2, sum2))
-
+#
 # print('两数之和为%.2f' % (float(input('请输入第一个数字')) + float(input('请输入第二个数字'))))
 
 # 平方根
@@ -107,33 +107,33 @@
 # # temp = x
 # # x = y
 # # y = temp
-# print('交换后的X值为：', x)
-# print('交换后的Y值为：{}'.format(y))
+# print('交换后的X值为:', x)
+# print('交换后的Y值为:{}'.format(y))
 
 # 判断字符串是否为数字
-# def is_number(s):
-#     try:  # 如果能运行float(s)语句，返回True(字符串s是浮点数)
-#         float(s)
-#         return True
-#     except ValueError:  # ValueError为Python的一种标准异常，表示‘传入无效的参数’
-#         pass  # pass不做任何事情，一般用做占位语句
-#     try:
-#         import unicodedata  # 处理ASCii码的包
-#         # for i in s:
-#         # isdigit() 方法检测字符串是否只由数字组成
-#         # isnumeric()方法检测字符串是否只由数字组成。这种方法是只针对unicode对象。
-#         unicodedata.numeric(s)  # 把一个表示数字的字符串转换为浮点数返回的函数
-#         return True
-#     except(TypeError, ValueError):
-#         pass
-#     return False
-# print(is_number('oo'))
-# print(is_number('1'))
-# print(is_number('哈大家都还记得滑放假放假加防腐剂动的'))
-# # 阿拉伯语 5
-# print(is_number('٥'))  # True
-# # 泰语 2
-# print(is_number('๒'))
+def is_number(s):
+    try:  # 如果能运行float(s)语句，返回True(字符串s是浮点数)
+        float(s)
+        return True
+    except ValueError:  # ValueError为Python的一种标准异常，表示‘传入无效的参数’
+        pass  # pass不做任何事情，一般用做占位语句
+    try:
+        import unicodedata  # 处理ASCii码的包
+        # for i in s:
+        # isdigit() 方法检测字符串是否只由数字组成
+        # isnumeric()方法检测字符串是否只由数字组成。这种方法是只针对unicode对象。
+        unicodedata.numeric(s)  # 把一个表示数字的字符串转换为浮点数返回的函数
+        return True
+    except(TypeError, ValueError):
+        pass
+    return False
+print(is_number('oo'))
+print(is_number('1'))
+print(is_number('哈大家都还记得滑放假放假加防腐剂动的'))
+# 阿拉伯语 5
+print(is_number('٥'))  # True
+# 泰语 2
+print(is_number('๒'))
 
 # 判断奇偶数
 # while True:
@@ -165,11 +165,64 @@
 #     print('平年')
 
 
+#百元买百鸡
+# for x in range(0, 20):
+#     for y in range(0, 33):
+#         z = 100 - x - y
+#         if 5*x + 3*y + z/3 == 100:
+#             print('公鸡：%d只，母鸡：%d只，小鸡：%d只' %(x, y, z))
 
+# 判断两数之和是否大于第三个数
+# a = 2
+# b = 2
+# c = 3
+# if a + b > c and a + c > b and b+c>a:
+#     print('是')
+# else:
+#     print('no')
+#
+# A = 'this is a test'
+# print(''.join(reversed(A)))
+# print(A.count('s'))
 
+# def getInfo(abc, a, b):
+#     startIndex = abc.index(a)
+#     if startIndex >= 0:
+#         startIndex += len(a)
+#         endIndex = abc.index(b)
+#         print(abc[0:startIndex-4])
+#         print(startIndex, endIndex)
+#         return abc[startIndex:endIndex]
+#
+# aa = getInfo('terlet is good jobs', 'er', 'od')
+# print(aa)
 
+# 九九乘法表
+# for i in range(1, 10):
+#     for j in range(1, i+1):
+#         print('%d*%d=%d' % (i, j, i*j), end=' ')
+#     print()
 
+# str0 = 'abc1fd2eh3'
+# str1 = ''
+# for i in str0:
+#     if i.isdigit():
+#         x = int(i)
+#         str1 += str0[0:str0.index(i)] * x
+#         str0 = str0[str0.index(i) + 1:]
+# print(str1)
+#
+# def foo(*args, **kwargs):
+#     print('args=', args)
+#     print('kwargs=', kwargs)
+#     print('-----------------')
+# if __name__ == '__main__':
+#     foo(1, 2, 3, 4)
+#     foo(1, 2, a=1, b=2)
 
-
-
-
+# a = [6, 4, 1]
+# b = [1, 9, 10, 7, 1, 6, 2]
+# for i in a:
+#     for j in b:
+#         if i == j:
+#             print(i)

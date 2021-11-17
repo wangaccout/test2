@@ -21,7 +21,7 @@ class Count():
 
 if __name__ == '__main__':
     count = Count(6, 3)
-    print(count.add(2))
-    print(count.subtract())
-    print(count.product())
-    print(count.division())
+    # print(count.add(2))
+    # print(count.subtract())
+    # print(count.product())
+    # print(count.division())

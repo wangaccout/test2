@@ -41,11 +41,16 @@ def outer():
 outer()
 
 a = 10
-def test():
-    # global a
+# def test():
+#     # global a
+#     a = a + 1
+#     print(a)
+# test()  # 报错
+
+def test(a):
     a = a + 1
     print(a)
-test()  # 报错
+test(a)
 
 
 

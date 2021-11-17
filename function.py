@@ -1,3 +1,5 @@
+import module
+
 # 函数
 def func():
     print('ok')
@@ -12,10 +14,10 @@ def Foo(x):
 
 print(Foo(4))
 
-if __name__ == '__main__':
-    print('程序自身在运行')
-else:
-    print('我来自另一个模块')
+# if __name__ == '__main__':
+#     print('程序自身在运行')
+# else:
+#     print('我来自另一个模块')
 
 result = lambda x: x * x
 print(result(5))
@@ -24,17 +26,48 @@ print(result(5))
 print('{} {}'.format('hello', 'world'))  # 不设置指定位置，按默认顺序
 print('{1} {0}'.format('hello', 'world'))  # 设置指定位置
 print('姓名：{name}, 年龄{age}'.format(name='tom', age=12))
+
 # 通过字典设置参数
 site = {'name': 'tim', 'age': 18}
 print('姓名：{name}，年龄：{age}'.format(**site))
+
 # 通过列表索引设置参数
 list = ['张三', 20]
 print('姓名:{0[0]}, 年龄:{0[1]}'.format(list))  # 0是必须的
+
 # 也可以向str.format()传入对象
 class AssignValue(object):
     def __init__(self, value):
         self.value = value
 my_value = AssignValue(6)
 print('value为：{0.value}'.format(my_value))  # 0是可选的
+
 # 数字格式化
 print('{:.2f}'.format(3.1415926))
+
+# 不定长参数
+# 一个星号 * 的参数会以元组(tuple)的形式导入
+def printinfo(arg1, *vartuple):
+    print("输出：")
+    print(arg1)
+    print(vartuple)
+
+printinfo(70, 60, 50)
+
+# 两个星号 ** 的参数会以字典的形式导入
+def printinfo1(arg1, **vardict):
+    print("输出：")
+    print(arg1)
+    print(vardict)
+
+printinfo1(1, a=2, b=3)
+
+print(dir())
+
+
+
+
+
+
+
+

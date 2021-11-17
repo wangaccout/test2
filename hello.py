@@ -25,4 +25,17 @@ import time
 #     sys.stdout.write("\r{0}{1}".format("|" * i, '%.2f%%' % (percent * 100)))
 #     sys.stdout.flush()
 #     time.sleep(1)
-print('1885558886666')
+# print('1885558886666')
+
+# a = 21
+# c = 2
+# c %= a
+# print("5 - c 的值为：", c)
+#
+# c **= a
+# print("6 - c 的值为：", c)
+#
+# c //= a
+# print("7 - c 的值为：", c)
+
+

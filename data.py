@@ -26,50 +26,82 @@ from collections import deque
 # print(string2 * 2)
 # print(string5)
 # print("我叫%s 今年%d岁!" % ('小明', 10))
-#
+# #
 # if 'g' in string1:
 #     print('ok')
 # else:
 #     print("no")
-print("\tPython")  # \t 表示空四个字符，也称缩进，相当于按一下tab键
-print("\n123\n456\n789")  # \n 换行，相当于按一下回车键
-print("自然数：\n\t123\n\t456\n\t789")  # \n\t 换行加每行空四格
-print("\t\n123\t\n456\t\n789")  # 和\n效果一样，不建议使用
-print(r'C:\Users\name')  # r 表示转义字符'\'，就是一个普通字符'\'，不表示任何意义
-# print(C:\Users\name')  # 报错，\U \u 表示Unicode字符串
-print('C:\Administrator\name')
-print("It doesn't")
+# print("\tPython")  # \t 表示空四个字符，也称缩进，相当于按一下tab键
+# print("\n123\n456\n789")  # \n 换行，相当于按一下回车键
+# print("自然数：\n\t123\n\t456\n\t789")  # \n\t 换行加每行空四格
+# print("\t\n123\t\n456\t\n789")  # 和\n效果一样，不建议使用
+# print(r'C:\Users\name')  # r 表示转义字符'\'，就是一个普通字符'\'，不表示任何意义
+# # print(C:\Users\name')  # 报错，\U \u 表示Unicode字符串
+# print('C:\Administrator\name')
+# print("It doesn't")
+
+# 字符串切片、反转
+str = 'welcome to shui&di'
+str1 = str[11:15]
+str2 = str[16:]
+print(str1 + str2)
+# 1
+str3 = ''.join(reversed(str))
+print(str3)
+# 2
+str4 = str[::-1]
+print(str4)
+# 3
+str5 = ''
+for i in str:
+    str5 = i + str5
+print(str5)
+# 4
+str6 = ''
+length = len(str) - 1
+while length >= 0:
+    str6 = str6 + str[length]
+    length = length - 1
+print(str6)
+# 5
+list7 = list(str)
+list7.reverse()
+# str7 = str(list7)
+print(list7)
+# print(str7)
 
 
 # 列表
 list1 = [1, 2, 3, 4, 5, 0]
-list2 = ['a', 'b', 'c', 'd']
-list2[2] = 2
-print(list1[1: 6])
-print(list2)
-# del list2[2]
-list2.append(6)  # 末尾添加6
-list2.insert(0, 0)  # 第0个位置插入0
-list2.extend(list1)  # 将list1添加到list2中
-list2.pop(0)  # 删除第0个位置的元素
-list2.remove('d')  # 删除 d
-# list2.popleft()
-print(list2)
-print(list2.index(6), list2.count(2))  # 6的索引，2的总数
-list1.sort()  # 对列表中的元素进行排序
-print(list1)
-list1.reverse()  # 倒序排序
-print(list1)
-print(len(list1))
-print(list1[-2])
-print(list1.copy())  # 复制列表
-
-queue = deque(["Eric", "John", "Michael"])  # 列表作为队列使用，第一个加入的元素第一个取出来
-queue.append("Terry")
-queue.append("Graham")
-print(queue)
-queue.popleft()
-print(queue)
+# list2 = ['a', 'b', 'c', 'd']
+# list2[2] = 2
+# print(list1[1: 6])
+# print(list2)
+# # del list2[2]
+# list2.append(6)  # 末尾添加6
+# list2.insert(0, 0)  # 第0个位置插入0
+# list2.extend(list1)  # 将list1添加到list2中
+# list2.pop(0)  # 删除第0个位置的元素
+# list2.remove('d')  # 删除 d
+# # list2.popleft()
+# print(list2)
+# print(list2.index(6), list2.count(2))  # 6的索引，2的总数
+# list1.sort()  # 对列表中的元素进行排序
+# print(list1)
+# list1.reverse()  # 倒序排序
+# print(list1)
+# print(len(list1))
+# print(list1[-2])
+# print(list1.copy())  # 复制列表
+# list1.reverse()
+# print(list1)
+#
+# queue = deque(["Eric", "John", "Michael"])  # 列表作为队列使用，第一个加入的元素第一个取出来
+# queue.append("Terry")
+# queue.append("Graham")
+# print(queue)
+# queue.popleft()
+# print(queue)
 
 # 元组
 # tup1 = ('a', 'b', 'c', 'd')

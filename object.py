@@ -1,3 +1,4 @@
+# # 面向对象
 class MyClass:
     """一个简单的类实例"""
     i = 123
@@ -5,18 +6,19 @@ class MyClass:
         return 'hello world'
 
 x = MyClass()  # 实例化类
+
 # 访问类的属性和方法
 print('MyClass类的属性i为：', x.i)
 print('MyClass类的方法f输出为：', x.f())
-
-
+#
+# 构造方法，类的实例化操作会自动调用__init__()方法
 class Complex:
     def __init__(self, realpart, imagpart):
         self.r = realpart
         self.i = imagpart
 x = Complex(3.0, -4.5)
 print(x.r, x.i)
-
+#
 # self代表类的实例
 class Test:
     def prt(self):
@@ -24,6 +26,7 @@ class Test:
         print(self.__class__)  # self.class指向类
 t = Test()
 t.prt()
+
 # self 不是Python关键字，换成run也可以正常执行
 class Test1:
     def prt(run):
@@ -47,12 +50,14 @@ class people:
         self.__weight = w
 
     def speak(self):
-        print('%s说：我%d岁,体重%d斤' % (self.name, self.age, self.__weight))
+        print('%s说：我%d岁，体重%d斤' % (self.name, self.age, self.__weight))
+        print('{}说：我{}岁，体重{}斤'.format(self.name, self.age, self.__weight))
 
 # 实例化类
-# p = people('tom',10,30)
-# p.speak()
+p = people('tom',10,30)
+p.speak()
 
+# 继承
 class student(people):
     grade = ''
     def __init__(self, n, a, w, g):
@@ -62,8 +67,8 @@ class student(people):
     # 覆写父类的方法
     def speak(self):
         print('%s说：我%d岁了，我在读%d年级' % (self.name, self.age, self.grade))
-# s = student('ken', 10, 60, 3)
-# s.speak()
+s = student('ken', 10, 60, 3)
+s.speak()
 
 class speaker():
     topic = ''
@@ -95,8 +100,9 @@ c = child()
 c.myMethod()  # 子类调用重写方法
 super(child, c).myMethod()  # 用子类对象调用父类已被覆盖的方法
 
+# 类的私有属性
 class justCounter:
-    __secretCount = 0  # 私有变量
+    __secretCount = 0  # 私有变量，不能在类的外部被使用或直接访问
     publicCount = 0  # 公开变量
     def count(self):
         self.__secretCount += 1
@@ -109,6 +115,7 @@ counter.count()
 print(counter.publicCount)
 # print(counter.__secretCount)  # 报错，实例不能访问私有变量
 
+# 类的私有方法，只能在类的内部调用 ，不能在类的外部调用
 class site:
     def __init__(self, name, url):
         self.name = name
@@ -127,6 +134,7 @@ x.who()
 x.foo()
 # x.__foo()  # 报错
 
+# 运算符重载
 class vector:
     def __init__(self, a, b):
         self.a = a
@@ -134,12 +142,10 @@ class vector:
     def __str__(self):
         return 'vector(%d, %d)' % (self.a, self.b)
     def __add__(self, other):
-        return vector(self.a + other.b, self.b + other.a)
+        return vector(self.a + other.a, self.b + other.b)
 
 v1 = vector(2, 10)
 v2 = vector(5, -2)
 print(v1 + v2)
-
-
 
 

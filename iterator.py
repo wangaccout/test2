@@ -12,7 +12,7 @@ import sys
 # list1 = [11, 12, 13, 14]
 # for i in list1:
 #     print(i, end=' ')
-
+#
 # lt = iter(list)
 # while True:
 #     try:
@@ -20,30 +20,32 @@ import sys
 #     except StopIteration:
 #         sys.exit()
 
-
-class MyNumber:
-    def __iter__(self):
-        self.a = 1
-        return self
-
-    def __next__(self):
-        if self.a <= 10:
-            x = self.a
-            self.a += 1
-            return x
-        else:
-            raise StopIteration  # StopIteration 异常用于标识迭代的完成,防止出现无限循环
-
-myclass = MyNumber()
-myiter = iter(myclass)
-
+# 创建一个迭代器，需要在类中实现两个方法__iter__()、 __next__()
+# class MyNumber:
+#     def __iter__(self):
+#         self.a = 1
+#         return self
+#
+#     def __next__(self):
+#         if self.a <= 5:
+#             x = self.a
+#             self.a += 1
+#             return x
+#         else:
+#             # print("qqq")
+#             raise StopIteration  # StopIteration 异常用于标识迭代的完成,防止出现无限循环
+#
+# myclass = MyNumber()
+# myiter = iter(myclass)
+#
 # print(next(myiter))
 # print(next(myiter))
-for x in myiter:
-    print(x)
+# for x in myiter:
+#     print(x)
 
 # 生成器 使用了yield的函数被称为生成器（generator）
-def fibonacci(n):  # 生成器函数 - 斐波那契
+# 生成器函数 - 斐波那契
+def fibonacci(n):
     a, b, counter = 0, 1, 0
     while True:
         if counter > n:
@@ -51,7 +53,7 @@ def fibonacci(n):  # 生成器函数 - 斐波那契
         yield a
         a, b = b, a + b
         counter += 1
-f = fibonacci(10)  # 是一个迭代器，由生成器返回生成
+f = fibonacci(10)  # f 是一个迭代器，由生成器返回生成
 
 while True:
     try:
