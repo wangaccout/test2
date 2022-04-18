@@ -22,7 +22,8 @@ mycursor.execute('select * from books')
 # data = mycursor.fetchone()  # 获取单条数据
 # print('单条数据', data)
 
-myresult = mycursor.fetchall()  # 获取所有记录
+# 获取所有记录
+myresult = mycursor.fetchall()
 for x in myresult:
     print(x)
 
