@@ -118,7 +118,34 @@
 #         continue
 
 # 斐波那契数列
-a, b = 0, 1
-while b < 10:
-    print(b)
-    a, b = b, a+b
+# a, b = 0, 1
+# while b < 10:
+#     print(b)
+#     a, b = b, a+b
+
+# 冒泡排序
+list = [11, 22, 3, 1]
+count = len(list)
+for i in range(0, count):
+    for j in range(i + 1, count):
+        if list[i] > list[j]:
+            list[i], list[j] = list[j], list[i]
+print(list)
+
+str = 'welcome to shui&di'
+str1 = str.split(' ')[2].split('&')
+print(''.join(str1))
+
+
+
+
+
+
+
+
+
+
+
+
+
+

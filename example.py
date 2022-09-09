@@ -1,3 +1,5 @@
+import sys
+
 # 求和
 # num1 = input('请输入第一个数字')
 # num2 = input('请输入第二个数字')
@@ -111,29 +113,29 @@
 # print('交换后的Y值为:{}'.format(y))
 
 # 判断字符串是否为数字
-def is_number(s):
-    try:  # 如果能运行float(s)语句，返回True(字符串s是浮点数)
-        float(s)
-        return True
-    except ValueError:  # ValueError为Python的一种标准异常，表示‘传入无效的参数’
-        pass  # pass不做任何事情，一般用做占位语句
-    try:
-        import unicodedata  # 处理ASCii码的包
-        # for i in s:
-        # isdigit() 方法检测字符串是否只由数字组成
-        # isnumeric()方法检测字符串是否只由数字组成。这种方法是只针对unicode对象。
-        unicodedata.numeric(s)  # 把一个表示数字的字符串转换为浮点数返回的函数
-        return True
-    except(TypeError, ValueError):
-        pass
-    return False
-print(is_number('oo'))
-print(is_number('1'))
-print(is_number('哈大家都还记得滑放假放假加防腐剂动的'))
-# 阿拉伯语 5
-print(is_number('٥'))  # True
-# 泰语 2
-print(is_number('๒'))
+# def is_number(s):
+#     try:  # 如果能运行float(s)语句，返回True(字符串s是浮点数)
+#         float(s)
+#         return True
+#     except ValueError:  # ValueError为Python的一种标准异常，表示‘传入无效的参数’
+#         pass  # pass不做任何事情，一般用做占位语句
+#     try:
+#         import unicodedata  # 处理ASCii码的包
+#         # for i in s:
+#         # isdigit() 方法检测字符串是否只由数字组成
+#         # isnumeric()方法检测字符串是否只由数字组成。这种方法是只针对unicode对象。
+#         unicodedata.numeric(s)  # 把一个表示数字的字符串转换为浮点数返回的函数
+#         return True
+#     except(TypeError, ValueError):
+#         pass
+#     return False
+# print(is_number('oo'))
+# print(is_number('1'))
+# print(is_number('哈大家都还记得滑放假放假加防腐剂动的'))
+# # 阿拉伯语 5
+# print(is_number('٥'))  # True
+# # 泰语 2
+# print(is_number('๒'))
 
 # 判断奇偶数
 # while True:
@@ -214,9 +216,29 @@ print(is_number('๒'))
 #     foo(1, 2, 3, 4)
 #     foo(1, 2, a=1, b=2)
 
-# a = [6, 4, 1]
-# b = [1, 9, 10, 7, 1, 6, 2]
-# for i in a:
-#     for j in b:
-#         if i == j:
-#             print(i)
+# 斐波那契数列
+a = 0
+b = 1
+count = 10
+for i in range(count):
+    print(a, end=' ')
+    a, b = b, a+b
+    i += 1
+
+print('--------------------------')
+
+# 使用yield实现斐波那契数列
+def feibonacci(n):
+    a, b, counter = 0, 1, 0
+    while True:
+        if counter > n:
+            return
+        yield a
+        a, b = b, a+b
+        counter += 1
+f = feibonacci(10)
+while True:
+    try:
+        print(next(f), end=' ')
+    except StopIteration:
+        sys.exit()
