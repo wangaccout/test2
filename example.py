@@ -171,6 +171,7 @@ print(is_number('๒'))
 #         z = 100 - x - y
 #         if 5*x + 3*y + z/3 == 100:
 #             print('公鸡：%d只，母鸡：%d只，小鸡：%d只' %(x, y, z))
+#             print('公鸡：{0}只，母鸡：{1}只，小鸡：{2}只'.format(x, y, z))
 
 # 判断两数之和是否大于第三个数
 # a = 2
@@ -201,17 +202,10 @@ print(is_number('๒'))
 # for i in range(1, 10):
 #     for j in range(1, i+1):
 #         print('%d*%d=%d' % (i, j, i*j), end=' ')
+#         # print('{1}*{0}={2}' .format(i, j, i * j), end=' ')
 #     print()
 
-# str0 = 'abc1fd2eh3'
-# str1 = ''
-# for i in str0:
-#     if i.isdigit():
-#         x = int(i)
-#         str1 += str0[0:str0.index(i)] * x
-#         str0 = str0[str0.index(i) + 1:]
-# print(str1)
-#
+#*args元组, **kwargs字典
 # def foo(*args, **kwargs):
 #     print('args=', args)
 #     print('kwargs=', kwargs)

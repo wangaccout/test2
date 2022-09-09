@@ -41,33 +41,33 @@ from collections import deque
 # print("It doesn't")
 
 # 字符串切片、反转
-str = 'welcome to shui&di'
-str1 = str[11:15]
-str2 = str[16:]
-print(str1 + str2)
-# 1
-str3 = ''.join(reversed(str))
-print(str3)
-# 2
-str4 = str[::-1]
-print(str4)
-# 3
-str5 = ''
-for i in str:
-    str5 = i + str5
-print(str5)
-# 4
-str6 = ''
-length = len(str) - 1
-while length >= 0:
-    str6 = str6 + str[length]
-    length = length - 1
-print(str6)
-# 5
-list7 = list(str)
-list7.reverse()
-# str7 = str(list7)
-print(list7)
+# str = 'welcome to shui&di'
+# str1 = str[11:15]
+# str2 = str[16:]
+# print(str1 + str2)
+# # 1
+# str3 = ''.join(reversed(str))
+# print(str3)
+# # 2
+# str4 = str[::-1]
+# print(str4)
+# # 3
+# str5 = ''
+# for i in str:
+#     str5 = i + str5
+# print(str5)
+# # 4
+# str6 = ''
+# length = len(str) - 1
+# while length >= 0:
+#     str6 = str6 + str[length]
+#     length = length - 1
+# print(str6)
+# # 5
+# list7 = list(str)
+# list7.reverse()
+# # str7 = str(list7)
+# print(list7)
 # print(str7)
 
 
@@ -113,8 +113,8 @@ list1 = [1, 2, 3, 4, 5, 0]
 # print(tup3)
 # print(type(tup4), type(tup5))
 
-# 字典
-# dict1 = {'Name': 'Runoob', 'Age': 7, 'Class': 'First'}
+# 字典 get() 方法 Vs dict[key] 访问元素
+dict1 = {'Name': 'Runoob', 'Age': 7, 'Class': 'First'}
 # print(dict1['Name'])
 # del dict1['Age']
 # print(dict1)
@@ -123,6 +123,9 @@ list1 = [1, 2, 3, 4, 5, 0]
 # del dict1
 # print(dict1)
 # print(dict1['Name'])
+age = dict1.get('Age', '')
+print(age, type(age))
+print(dict1.get('hight', '188'))
 
 # confusion = {}
 # confusion[1] = 1

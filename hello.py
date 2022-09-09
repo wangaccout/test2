@@ -38,4 +38,7 @@ import time
 # c //= a
 # print("7 - c 的值为：", c)
 
-
+# a = '1'
+# b = 123
+# if a in b:
+#     print(a)
